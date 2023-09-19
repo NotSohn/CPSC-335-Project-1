@@ -107,12 +107,12 @@ The suggested grading rubric is below.
 
 # Submitting your code
 
-## Submit your project as a zip folder with following format <Team_member_name1_member_2_member_3>.zip to the Project 1 link on Canvas. It allows for multiple submissions. Include following files in the zip folder:
+    Submit your project as a zip folder with following format <Team_member_name1_member_2_member_3>.zip to the Project 1 link on Canvas. It allows for multiple submissions. Include following files in the zip folder:
 
-    1. Readme
-    2. Input.txt
-    3. Project1_starter.py or project1_starter.cpp
-    4. Output.txt
+        1. Readme
+        2. Input.txt
+        3. Project1_starter.py or project1_starter.cpp
+        4. Output.txt
 
 # Deadline
 

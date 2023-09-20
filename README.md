@@ -1,14 +1,22 @@
-# CPSC-335-Project-1
-
-# Project 1: Implementing Algorithm
-
-# Fall 2023 CPSC 335.02/CPSC 335.09 - Algorithm Engineering
+# Fall 2023 CPSC 335.02/CPSC 335.09 Project 1: Implementing Algorithm
 
 ## Group Members:
 
-    Student 1:
-    Student 2:
-    Student 3:
+- Student 1
+  Name: Justin Sohn
+  Student Email: sohnjustin@csu.fullerton.edu
+
+- Student 2:
+  Name: Hao Doan Anh Vo  
+   Student Email: vodoananhhao@csu.fullerton.edu
+
+- Student 3:
+  Name: Anthony Seng
+  Student Email: aseng6825@csu.fullerton.edu
+
+## How to run the Program
+
+# Instructions
 
 ## Abstract
 

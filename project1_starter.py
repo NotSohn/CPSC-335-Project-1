@@ -1,4 +1,4 @@
-from datetime import time
+from datetime import datetime
 
 ###
 # with open("input.txt", 'r') as file:
@@ -16,7 +16,5 @@ def schedule():
     duration = #duration goes here
 
     #find min time for work hours
-
-    
-
-    
+    start_time = max(workInput1[0], workInput2[0])
+    end_time = min(workInput1[1], workInput2[1])

@@ -16,6 +16,7 @@ def schedule():
     duration = #duration goes here
 
     #convert inputs to datetime objects
+    format = "%H:%M"
     workInput1 = [datetime.strptime(x, format) for x in person1_work_hours]
     busyInput1 = [[datetime.strptime(x, format) for x in y ] for y in person1_busy_Schedule]
     workInput2 = [datetime.strptime(x, format) for x in person2_work_hours]

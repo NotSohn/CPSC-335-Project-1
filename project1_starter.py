@@ -9,11 +9,17 @@ from datetime import datetime
 
 
 def schedule():
-    busyInput1 = #1st busy time goes here
-    workInput1 = #1st work time goes here
-    busyInput2 = #2nd busy time goes here
-    workInput2 = #2nd work time goes here
+    person1_busy_Schedule = #1st busy time goes here
+    person1_work_hours = #1st work time goes here
+    person2_busy_Schedule = #2nd busy time goes here
+    person2_work_hours = #2nd work time goes here
     duration = #duration goes here
+
+    #convert inputs to datetime objects
+    workInput1 = [datetime.strptime(x, format) for x in person1_work_hours]
+    busyInput1 = [[datetime.strptime(x, format) for x in y ] for y in person1_busy_Schedule]
+    workInput2 = [datetime.strptime(x, format) for x in person2_work_hours]
+    busyInput2 = [[datetime.strptime(x, format) for x in y ] for y in person2_busy_Schedule]
 
     #find min time for work hours
     start_time = max(workInput1[0], workInput2[0])

@@ -105,14 +105,14 @@ An algorithm for solving this problem involves combing the two sub-arrays into a
    for grading)
 4. A brief proof argument for the time complexity of your algorithm, including step-counts
 
-## Mathematical Analysis
+## Mathematical Analysis (Our Analysis)
 
-Analyze your algorithm mathematically. You should prove a specific big-O efficiency class for the
-algorithm. The analysis should be routine, similar to the ones we have done in class and in the
-textbook. The algorithm’s efficiency class will be one of 𝑂(𝑛), 𝑂(𝑛2), 𝑂(𝑛3), or 𝑂(𝑛4).
-Can we do better? What changes do you think can be made to your algorithm to increase its time
-complexity/efficiency? Will an increase in 𝑛 change the complexity class? 𝑛 is the number of persons
-in the group.
+Just looking at schedule algorithm, our step counts is nlogn + 18n + 16. To prove this efficieny class, we are 
+using proving efficiency class by using limits. T(n) is nlogn + 18n +16 and F(n) is nlogn. lim (nlogn + 18n + 16)/nlogn
+turns into 1 + lim 18/logn + lim 16/nlogn. This means that L = 1 since both lim 18/logn and lim 16/nlogn are 0.
+Since L=1 and L is a non-negative constant therefore nlogn + 18n + 16 ∈ O(nlogn). We think that we can do better by creating 
+our own sort function instead of relying on python built in sort function which is a mergesort algorithm which has a 
+efficiency class of O(nlogn). No, the complexity class won't change regardless of the increase in n. 
 
 ## Grading Rubric
 

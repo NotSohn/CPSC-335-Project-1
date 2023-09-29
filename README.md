@@ -113,6 +113,8 @@ turns into 1 + lim 18/logn + lim 16/nlogn. This means that L = 1 since both lim 
 Since L=1 and L is a non-negative constant therefore nlogn + 18n + 16 ∈ O(nlogn). We think that we can do better by creating 
 our own sort function instead of relying on python built in sort function which is a mergesort algorithm which has a 
 efficiency class of O(nlogn). No, the complexity class won't change regardless of the increase in n. 
+![processed-F04FEF6E-763E-45BF-9AC8-0551D576E939-6C12A368-7406-44ED-A435-3209E8238DD4](https://github.com/NotSohn/CPSC-335-Project-1/assets/98761137/a9bdf346-a429-4f63-9ab8-30b0dc86f36b)
+
 
 ## Grading Rubric
 

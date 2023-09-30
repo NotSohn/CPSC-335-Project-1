@@ -1,6 +1,13 @@
 from datetime import datetime
 
 
+def print_schedule(output):
+    # write output to file
+    with open("output.txt", 'w') as file:
+        file.write(output)
+        file.close()
+
+
 def schedule(person1_busy_Schedule, person1_work_hours, person2_busy_Schedule, person2_work_hours, duration):
     # convert inputs to datetime objects
     format = "%H:%M"
@@ -23,18 +30,23 @@ def schedule(person1_busy_Schedule, person1_work_hours, person2_busy_Schedule, p
 
     # find the time intervals when all members are available
     if (unavailable_time[0][0] - start_time >= timedelta(minutes=duration)):
-        available_time.append ((start_time, unavailable_time[0][0]))
+        available_time.append((start_time, unavailable_time[0][0]))
 
-    for i in range (1, len(unavailable_time)):
-        time_difference = unavailable_time[i][0] - unavailable_time[i-1][1] 
+    for i in range(1, len(unavailable_time)):
+        time_difference = unavailable_time[i][0] - unavailable_time[i-1][1]
         if (time_difference >= timedelta(minutes=duration)):
-            available_time.append ((unavailable_time[i-1][1], unavailable_time[i][0]))
-        
-    if (end_time - unavailable_time[len(unavailable_time) - 1][1] >= timedelta(minutes=duration)):
-        available_time.append((unavailable_time[len(unavailable_time) - 1][1], end_time))
+            available_time.append(
+                (unavailable_time[i-1][1], unavailable_time[i][0]))
 
-    # convert datetime objects back into time strings to display 
+    if (end_time - unavailable_time[len(unavailable_time) - 1][1] >= timedelta(minutes=duration)):
+        available_time.append(
+            (unavailable_time[len(unavailable_time) - 1][1], end_time))
+
+    # convert datetime objects back into time strings to display
     output = [[i.strftime(format) for i in l] for l in available_time]
+
+    # send to print_schedule function to print out onto an output file
+    print_schedule(output)
     print(output)
 
 

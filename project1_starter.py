@@ -1,4 +1,5 @@
 from datetime import datetime
+from datetime import timedelta
 import ast
 
 def print_schedule(output):
@@ -66,20 +67,19 @@ def schedule(person1_busy_Schedule, person1_work_hours, person2_busy_Schedule, p
     # create an array of unavailable time from the two inputs and sort it
     unavailable_time = busyInput1 + busyInput2
     unavailable_time.sort()
-
     available_time = []
-
+    duration1 = int(duration)
     # find the time intervals when all members are available
-    if (unavailable_time[0][0] - start_time >= timedelta(minutes=duration)):
+    if (unavailable_time[0][0] - start_time >= timedelta(minutes=duration1)):
         available_time.append((start_time, unavailable_time[0][0]))
 
     for i in range(1, len(unavailable_time)):
         time_difference = unavailable_time[i][0] - unavailable_time[i-1][1]
-        if (time_difference >= timedelta(minutes=duration)):
+        if (time_difference >= timedelta(minutes=duration1)):
             available_time.append(
                 (unavailable_time[i-1][1], unavailable_time[i][0]))
 
-    if (end_time - unavailable_time[len(unavailable_time) - 1][1] >= timedelta(minutes=duration)):
+    if (end_time - unavailable_time[len(unavailable_time) - 1][1] >= timedelta(minutes=duration1)):
         available_time.append(
             (unavailable_time[len(unavailable_time) - 1][1], end_time))
 

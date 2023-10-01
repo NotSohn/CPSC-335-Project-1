@@ -107,13 +107,14 @@ An algorithm for solving this problem involves combing the two sub-arrays into a
 
 ## Mathematical Analysis (Our Analysis)
 
-Just looking at schedule algorithm, our step counts is nlogn + 18n + 16. To prove this efficieny class, we are 
-using proving efficiency class by using limits. T(n) is nlogn + 18n +16 and F(n) is nlogn. lim (nlogn + 18n + 16)/nlogn
-turns into 1 + lim 18/logn + lim 16/nlogn. This means that L = 1 since both lim 18/logn and lim 16/nlogn are 0.
-Since L=1 and L is a non-negative constant therefore nlogn + 18n + 16 ∈ O(nlogn). We think that we can do better by creating 
+Just looking at schedule algorithm, our step counts is nlogn + 38n + 15. To prove this efficieny class, we are 
+using proving efficiency class by using limits. T(n) is nlogn + 38n + 15 and F(n) is nlogn. lim (nlogn + 38n + 15)/nlogn
+turns into 1 + lim 38/logn + lim 15/nlogn. This means that L = 1 since both lim 38/logn and lim 15/nlogn are 0.
+Since L=1 and L is a non-negative constant therefore nlogn + 38n + 15 ∈ O(nlogn). We think that we can do better by creating 
 our own sort function instead of relying on python built in sort function which is a mergesort algorithm which has a 
-efficiency class of O(nlogn). No, the complexity class won't change regardless of the increase in n. 
-![processed-F04FEF6E-763E-45BF-9AC8-0551D576E939-6C12A368-7406-44ED-A435-3209E8238DD4](https://github.com/NotSohn/CPSC-335-Project-1/assets/98761137/a9bdf346-a429-4f63-9ab8-30b0dc86f36b)
+efficiency class of O(nlogn). Another way to do it better is to not use the replace() function and have the input have no brackets so it
+makes it easier to convert it into datetime object. No, the complexity class won't change regardless of the increase in n. 
+![image](https://github.com/NotSohn/CPSC-335-Project-1/assets/98761137/888c3b37-c91e-4a87-a813-55a827986ca1)
 
 
 ## Grading Rubric

@@ -107,7 +107,7 @@ An algorithm for solving this problem involves combing the two sub-arrays into a
 
 ## Mathematical Analysis (Our Analysis)
 
-Just looking at schedule algorithm, our step counts is nlogn + 38n + 15. To prove this efficieny class, we are 
+Just looking at schedule algorithm, our step counts is nlogn + 38n + 15. To prove this efficiency class, we are 
 using proving efficiency class by using limits. T(n) is nlogn + 38n + 15 and F(n) is nlogn. lim (nlogn + 38n + 15)/nlogn
 turns into 1 + lim 38/logn + lim 15/nlogn. This means that L = 1 since both lim 38/logn and lim 15/nlogn are 0.
 Since L=1 and L is a non-negative constant therefore nlogn + 38n + 15 ∈ O(nlogn). We think that we can do better by creating 

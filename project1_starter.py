@@ -1,5 +1,5 @@
 from datetime import datetime
-
+import ast
 
 def print_schedule(output):
     # write output to file
@@ -11,12 +11,53 @@ def print_schedule(output):
 def schedule(person1_busy_Schedule, person1_work_hours, person2_busy_Schedule, person2_work_hours, duration):
     # convert inputs to datetime objects
     format = "%H:%M"
-    workInput1 = [datetime.strptime(x, format) for x in person1_work_hours]
-    busyInput1 = [[datetime.strptime(x, format)
-                   for x in y] for y in person1_busy_Schedule]
-    workInput2 = [datetime.strptime(x, format) for x in person2_work_hours]
-    busyInput2 = [[datetime.strptime(x, format)
-                   for x in y] for y in person2_busy_Schedule]
+    res = eval(person1_work_hours)
+    workInput1 = [datetime.strptime(x, format) for x in res]
+    res1 = person1_busy_Schedule.replace("[", "")
+    res1 = res1.replace(']', "")
+    res1 = res1.replace(',', "")
+    res1 = res1.replace('\n', "")
+    res1 = res1.replace('\'', "")
+    res1 = res1.replace('\ufeff', "")
+    li = list(res1.split(" "))
+    t1 = True
+    busyInput1 = []
+    while t1:
+        li1 = []
+        if len(li) == 0:
+            t1 = False
+            break
+        li1.append(datetime.strptime(li[0], format))
+        li1.append(datetime.strptime(li[1], format))
+        li.remove(li[0])
+        li.remove(li[0])
+        busyInput1.append(li1)
+    #busyInput1 = [[datetime.strptime(x, format)
+                   #for x in y] for y in res2]
+    res = eval(person2_work_hours)
+    workInput2 = [datetime.strptime(x, format) for x in res]
+    
+    res1 = person2_busy_Schedule.replace("[", "")
+    res1 = res1.replace(']', "")
+    res1 = res1.replace(',', "")
+    res1 = res1.replace('\n', "")
+    res1 = res1.replace('\'', "")
+    res1 = res1.replace('\ufeff', "")
+    li = list(res1.split(" "))
+    t1 = True
+    busyInput2 = []
+    while t1:
+        li1 = []
+        if len(li) == 0:
+            t1 = False
+            break
+        li1.append(datetime.strptime(li[0], format))
+        li1.append(datetime.strptime(li[1], format))
+        li.remove(li[0])
+        li.remove(li[0])
+        busyInput2.append(li1)
+    #busyInput2 = [[datetime.strptime(x, format)
+                   #for x in y] for y in person2_busy_Schedule]
 
     # find min time for work hours
     start_time = max(workInput1[0], workInput2[0])
@@ -63,7 +104,7 @@ def main():
             break
         elif len(content) == 1:
             compareTime = False
-            file.remove(content[0])
+            content.remove(content[0])
             break
         else:
             person1_busy_Schedule = content[0]

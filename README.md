@@ -114,7 +114,7 @@ Since L=1 and L is a non-negative constant therefore nlogn + 38n + 16 ∈ O(nlog
 our own sort function instead of relying on python built in sort function which is a mergesort algorithm which has a 
 efficiency class of O(nlogn). Another way to do it better is to not use the replace() function and have the input have no brackets so it
 makes it easier to convert it into datetime object. No, the complexity class won't change regardless of the increase in n. 
-![image](https://github.com/NotSohn/CPSC-335-Project-1/assets/98761137/56c9b566-4390-4612-92e5-5d710514e951)
+![image](https://github.com/NotSohn/CPSC-335-Project-1/assets/98761137/ac2f67ed-9187-4546-bae1-83841b4185da)
 
 
 ## Grading Rubric

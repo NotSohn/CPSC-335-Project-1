@@ -107,14 +107,14 @@ An algorithm for solving this problem involves combing the two sub-arrays into a
 
 ## Mathematical Analysis (Our Analysis)
 
-Just looking at schedule algorithm, our step counts is nlogn + 38n + 15. To prove this efficiency class, we are 
-using proving efficiency class by using limits. T(n) is nlogn + 38n + 15 and F(n) is nlogn. lim (nlogn + 38n + 15)/nlogn
-turns into 1 + lim 38/logn + lim 15/nlogn. This means that L = 1 since both lim 38/logn and lim 15/nlogn are 0.
-Since L=1 and L is a non-negative constant therefore nlogn + 38n + 15 ∈ O(nlogn). We think that we can do better by creating 
+Just looking at schedule algorithm, our step counts is nlogn + 38n + 16. To prove this efficiency class, we are 
+using proving efficiency class by using limits. T(n) is nlogn + 38n + 16 and F(n) is nlogn. lim (nlogn + 38n + 16)/nlogn
+turns into 1 + lim 38/logn + lim 16/nlogn. This means that L = 1 since both lim 38/logn and lim 16/nlogn are 0.
+Since L=1 and L is a non-negative constant therefore nlogn + 38n + 16 ∈ O(nlogn). We think that we can do better by creating 
 our own sort function instead of relying on python built in sort function which is a mergesort algorithm which has a 
 efficiency class of O(nlogn). Another way to do it better is to not use the replace() function and have the input have no brackets so it
 makes it easier to convert it into datetime object. No, the complexity class won't change regardless of the increase in n. 
-![image](https://github.com/NotSohn/CPSC-335-Project-1/assets/98761137/888c3b37-c91e-4a87-a813-55a827986ca1)
+![image](https://github.com/NotSohn/CPSC-335-Project-1/assets/98761137/56c9b566-4390-4612-92e5-5d710514e951)
 
 
 ## Grading Rubric

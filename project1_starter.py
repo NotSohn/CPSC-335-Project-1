@@ -89,7 +89,7 @@ def schedule(person1_busy_Schedule, person1_work_hours, person2_busy_Schedule, p
     output = [[i.strftime(format) for i in l] for l in available_time]
 
     # send to print_schedule function to print out onto an output file
-    print(output)
+    #print(output)
     output1 = str(output) + '\n'
     return output1
     #print_schedule(output1)

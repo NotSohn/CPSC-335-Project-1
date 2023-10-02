@@ -4,8 +4,8 @@ import ast
 
 def print_schedule(output):
     # write output to file
-    with open("output.txt", 'w') as file:
-        file.write(output)
+    with open("output.txt", 'a') as file:
+        file.writelines(output)
         file.close()
 
 
@@ -13,6 +13,8 @@ def schedule(person1_busy_Schedule, person1_work_hours, person2_busy_Schedule, p
     # convert inputs to datetime objects
     format = "%H:%M"
     res = eval(person1_work_hours)
+    #print(person1_busy_Schedule)
+    #print(person1_work_hours)
     workInput1 = [datetime.strptime(x, format) for x in res]
     res1 = person1_busy_Schedule.replace("[", "")
     res1 = res1.replace(']', "")
@@ -48,15 +50,15 @@ def schedule(person1_busy_Schedule, person1_work_hours, person2_busy_Schedule, p
     t1 = True
     busyInput2 = []
     while t1:
-        li1 = []
+        li2 = []
         if len(li) == 0:
             t1 = False
             break
-        li1.append(datetime.strptime(li[0], format))
-        li1.append(datetime.strptime(li[1], format))
+        li2.append(datetime.strptime(li[0], format))
+        li2.append(datetime.strptime(li[1], format))
         li.remove(li[0])
         li.remove(li[0])
-        busyInput2.append(li1)
+        busyInput2.append(li2)
     #busyInput2 = [[datetime.strptime(x, format)
                    #for x in y] for y in person2_busy_Schedule]
 
@@ -87,8 +89,11 @@ def schedule(person1_busy_Schedule, person1_work_hours, person2_busy_Schedule, p
     output = [[i.strftime(format) for i in l] for l in available_time]
 
     # send to print_schedule function to print out onto an output file
-    print_schedule(output)
     print(output)
+    output1 = str(output) + '\n'
+    return output1
+    #print_schedule(output1)
+    #print(output)
 
 
 def main():
@@ -96,7 +101,7 @@ def main():
     with open("input.txt", 'r') as file:
         content = file.readlines()
         file.close()
-
+    result =[]
     compareTime = True
     while compareTime:
         if len(content) == 0:
@@ -114,14 +119,15 @@ def main():
             duration = content[4]
             # prepare the next input
             content.remove(content[5])
-            schedule(person1_busy_Schedule, person1_work_hours,
+            output = schedule(person1_busy_Schedule, person1_work_hours,
                      person2_busy_Schedule, person2_work_hours, duration)
+            result.append(output)
             content.remove(content[0])
-            content.remove(content[1])
-            content.remove(content[2])
-            content.remove(content[3])
-            content.remove(content[4])
-
+            content.remove(content[0])
+            content.remove(content[0])
+            content.remove(content[0])
+            content.remove(content[0])
+    print_schedule(result)
 
 if __name__ == "__main__":
     main()
